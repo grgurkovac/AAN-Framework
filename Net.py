@@ -289,7 +289,7 @@ class FeedForwardNet:
                 self.IN[i + 1] = np.append(self.Y[i], [[-1]] * batch_size, axis=1)
         return self.Y[-1]
 
-    def stochastic_backpropagation(self, output_values, learning_rate, inertion_factor=None):
+    def backpropagation(self, output_values, learning_rate, inertion_factor=None):
         """
         Updates the weights using backpropacation, error is sumed over all traning examples.
         Note that this method updates the weights only once.

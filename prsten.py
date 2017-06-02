@@ -17,7 +17,7 @@ for i in range(epoch_num):
     #     net.stochastic_backpropagation(out_values[start:end],learning_rate=0.0015,inertion_factor=0.3)
 
     net.forward_propagation(batch_in)
-    net.stochastic_backpropagation(batch_out, learning_rate=0.001,inertion_factor=0.3)
+    net.backpropagation(batch_out, learning_rate=0.001, inertion_factor=0.3)
     # if net.check_maximum_error(batch_out, 0.1, verbose=True,error_list=error):
     #     break
     if net.check_total_squared_error(batch_out,0.1, verbose=True,error_list=error):

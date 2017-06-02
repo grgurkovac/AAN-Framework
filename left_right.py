@@ -7,6 +7,6 @@ net = Net.FeedForwardNet(input_count=2, layers=[2], activation_function=Net.Feed
 epoch_num=10
 for i in range(epoch_num):
     net.forward_propagation(in_values)
-    net.stochastic_backpropagation(out_values, learning_rate=0.1, inertion_factor=0.001)
+    net.backpropagation(out_values, learning_rate=0.1, inertion_factor=0.001)
 display_results.display_results(net,in_values,out_values)
 net.save_state("left_right/lr.p")

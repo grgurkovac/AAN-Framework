@@ -25,7 +25,7 @@ for J in range(200):
         #     net.stochastic_backpropagation(out_values[start:end],learning_rate=0.0015,inertion_factor=0.3)
 
         net.forward_propagation(batch_in)
-        net.stochastic_backpropagation(batch_out, learning_rate=0.005, inertion_factor=I)
+        net.backpropagation(batch_out, learning_rate=0.005, inertion_factor=I)
         # if net.check_maximum_error(batch_out, 0.1, verbose=True,error_list=error):
         #     break
         if net.check_total_squared_error(batch_out,1, verbose=False,error_list=error):

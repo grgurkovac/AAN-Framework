@@ -10,7 +10,7 @@ for i in range(epoch_num):
         print("Epoch:",i)
     net.forward_propagation(in_values)
     # net.stochastic_backpropagation(out_values, learning_rate=0.02)
-    net.stochastic_backpropagation(out_values, learning_rate=0.005)
+    net.backpropagation(out_values, learning_rate=0.005)
     # net.stochastic_backpropagation(out_values, learning_rate=0.08)
 
     # if net.check_maximum_error(out_values, 0.2, verbose=True,error_list=errors):

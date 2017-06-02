@@ -1,7 +1,9 @@
 import Net
 import mnist_parser
 import numpy as np
-
+#To use this model it is required to download the MNIST database
+#The donwloaded base is then needet parse to numpy using mnist_parser.parse_to_npy method
+#The files genetared using mnist_parser.parse_to_npy are then loaded using np.load
 in_values = np.load("MNIST/mnist_train_images.npy")
 out_values = np.load("MNIST/mnist_train_labels.npy")
 out_gt_numbers=mnist_parser.one_hots_to_ints(out_values)
@@ -27,7 +29,7 @@ while(True):
     for i in range(epoch_num):
         batch_in,batch_out=net.generate_random_batch(in_values,out_values,batch_size)
         net.forward_propagation(batch_in)
-        net.stochastic_backpropagation(batch_out, learning_rate=learning_rate, inertion_factor=inertion_factor)
+        net.backpropagation(batch_out, learning_rate=learning_rate, inertion_factor=inertion_factor)
         # print("X:",net.X[-1])
         # net.stochastic_backpropagation(batch_out, learning_rate=learning_rate)
 

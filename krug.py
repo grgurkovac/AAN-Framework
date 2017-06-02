@@ -11,7 +11,7 @@ for i in range(epoch_num):
     if i % 100 == 0:
         print("Epoch:",i)
     net.forward_propagation(in_values)
-    net.stochastic_backpropagation(out_values, learning_rate=0.05, inertion_factor=0.3)
+    net.backpropagation(out_values, learning_rate=0.05, inertion_factor=0.3)
     # net.stochastic_backpropagation(out_values, learning_rate=0.02)
     # if net.check_maximum_error(out_values, 1):
     #     break
